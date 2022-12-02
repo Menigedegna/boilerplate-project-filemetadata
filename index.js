@@ -31,7 +31,6 @@ app.listen(port, function () {
 const upload = multer({ dest: "public/uploadFiles" });
 
 app.post("/api/fileanalyse", upload.single("upfile"), (req, res) => {
-    console.log(req.file);
     var result = {
       name: req.file.originalname,
       type: req.file.mimetype,
